@@ -1,0 +1,258 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  height: 5000px;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  height: 625px;
+  position: relative;
+  background: url("../images/header-bg.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+header .layout {
+  background: linear-gradient(to right, #17d396, #07f7f7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+header .headerContext {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 10%;
+}
+header .headerContext nav {
+  width: 100%;
+  height: 60px;
+  margin: auto;
+  transition: all 0.3s linear;
+}
+header .headerContext nav * {
+  color: #fff;
+}
+header .headerContext nav .navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+header .headerContext nav .navWrapper .left,
+header .headerContext nav .navWrapper .right {
+  width: 30%;
+}
+header .headerContext nav .navWrapper .left a {
+  margin-right: 15px;
+}
+header .headerContext nav .navWrapper .left a i {
+  font-size: 1.5rem;
+}
+header .headerContext nav .navWrapper .right i {
+  cursor: pointer;
+  float: right;
+  font-size: 2rem;
+}
+header .headerContext nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #17d396;
+  display: block;
+  height: 60px;
+  z-index: 5;
+}
+header .headerContext nav.sticky .navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+}
+header .headerContext .bottomText {
+  width: 80%;
+  margin: auto;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+header .headerContext .bottomText h1 {
+  font-size: 6rem;
+}
+header .headerContext .bottomText h3 {
+  font-size: 5rem;
+}
+header .headerContext .bottomText p {
+  font-size: 2rem;
+}
+header .headerMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding: 50px 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease 0s;
+}
+header .headerMenu .exit {
+  text-align: end;
+}
+header .headerMenu .exit i {
+  color: #fff;
+  cursor: pointer;
+  font-size: 3rem;
+  position: relative;
+  right: 5%;
+}
+header .headerMenu ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+header .headerMenu ul li {
+  text-align: center;
+  margin-bottom: 20px;
+}
+header .headerMenu ul li a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#about {
+  background-color: #22252c;
+  padding: 100px 0;
+}
+#about .imgHolder {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin-top: 50px;
+}
+#about .imgHolder::after {
+  content: "";
+  display: block;
+  border: 5px solid #00f298;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: -40px;
+  left: 50px;
+  z-index: 1;
+}
+#about .imgHolder img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: 2;
+}
+#about .btnDownload {
+  color: #fff;
+  position: relative;
+  left: 90px;
+  font-size: 1rem;
+  background: linear-gradient(to right, #17d396, #07f7f7);
+  box-shadow: 0 0 20px rgba(22, 213, 156, 0.7);
+  padding: 15px;
+  margin: 20px 0 100px 0;
+}
+#about .btnDownload i {
+  margin-right: 5px;
+}
+#about .about-context h2 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#about .about-context p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+#about .about-context li {
+  color: #fff;
+  margin-bottom: 10px;
+}
+#about .about-context li span {
+  color: #17d396;
+  font-weight: bold;
+  margin-right: 15px;
+  letter-spacing: 1px;
+}
+#about .interests h2 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+#about .interests .wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+#about .interests .wrapper .interest-item {
+  text-align: center;
+  overflow: hidden;
+}
+#about .interests .wrapper .interest-item i {
+  color: #07f7f7;
+  font-size: 3rem;
+  padding: 22px;
+  border: 1px solid #07f7f7;
+  border-radius: 100%;
+}
+#about .interests .wrapper .interest-item i:hover + p {
+  top: 0;
+  opacity: 1;
+}
+#about .interests .wrapper .interest-item i:hover {
+  background-color: #07f7f7;
+  color: #fff;
+}
+#about .interests .wrapper .interest-item p {
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 0;
+  position: relative;
+  top: 5px;
+  opacity: 0;
+  transition: all 0.3s;
+  font-size: 1.5rem;
+}/*# sourceMappingURL=style.css.map */
