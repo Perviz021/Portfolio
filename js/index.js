@@ -18,12 +18,13 @@ window.addEventListener("scroll", () => {
     nav.classList.remove("sticky");
   }
 
-  // SCROLL-To-Top
-  //   if (window.pageYOffset > 100) {
-  //     scroll.classList.add("active");
-  //   } else {
-  //     scroll.classList.remove("active");
-  //   }
+  // SCROLL - To - Top;
+  let scroll = document.querySelector(".scroll-to-top");
+  if (window.pageYOffset > 100) {
+    scroll.classList.add("active");
+  } else {
+    scroll.classList.remove("active");
+  }
 });
 
 let menuBtn = document.querySelector("header nav .right i");
