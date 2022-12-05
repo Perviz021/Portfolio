@@ -1,13 +1,9 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
-}
+@import "./resets";
 
 body {
   //   min-height: 100vh;
   height: 5000px;
+  overflow-x: hidden;
 }
 
 html {
@@ -166,12 +162,79 @@ header {
         a {
           color: #fff;
           font-size: 1.5rem;
+          transition: all 0.3s linear;
+
+          &:hover {
+            color: $main-color;
+          }
         }
       }
     }
   }
 }
 // HEADER ENDS
+
+// SCROLL TO TOP STARTS
+.scroll-to-top {
+  position: fixed;
+  bottom: 2%;
+  right: 4%;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: $main-color;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s linear;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    i {
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 50px;
+    }
+  }
+  .tooltiptext {
+    opacity: 0;
+    width: 83px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 60px;
+    left: 85%;
+    margin-left: -60px;
+    font-size: 0.8rem;
+    transition: all 0.3s linear;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    bottom: 4%;
+  }
+
+  &:hover .tooltiptext {
+    opacity: 1;
+  }
+}
+// SCROLL TO TOP ENDS
 
 // ABOUT SECTION STARTS
 #about {
@@ -209,7 +272,7 @@ header {
     position: relative;
     left: 90px;
     font-size: 1rem;
-    background: linear-gradient(to right, #17d396, #07f7f7);
+    background: linear-gradient(to right, #17d396, $main-color);
     box-shadow: 0 0 20px rgb(22 213 156 / 70%);
     padding: 15px;
     margin: 20px 0 100px 0;
@@ -221,9 +284,7 @@ header {
 
   .about-context {
     h2 {
-      background: -webkit-linear-gradient(left, #00f298, #07f7f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      @include textBackground();
       text-transform: uppercase;
       font-size: 2.5rem;
       font-weight: bold;
@@ -248,9 +309,7 @@ header {
 
   .interests {
     h2 {
-      background: -webkit-linear-gradient(left, #00f298, #07f7f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      @include textBackground();
       font-weight: bold;
       margin-bottom: 30px;
     }
@@ -264,10 +323,10 @@ header {
         text-align: center;
         overflow: hidden;
         i {
-          color: #07f7f7;
+          color: $main-color;
           font-size: 3rem;
           padding: 22px;
-          border: 1px solid #07f7f7;
+          border: 1px solid $main-color;
           border-radius: 100%;
 
           &:hover + p {
@@ -276,7 +335,7 @@ header {
           }
 
           &:hover {
-            background-color: #07f7f7;
+            background-color: $main-color;
             color: #fff;
           }
         }
@@ -295,3 +354,211 @@ header {
   }
 }
 // ABOUT SECTION ENDS
+
+// EDUCATION STARTS
+#education {
+  background-color: #313741;
+  padding: 100px 0;
+
+  .section-title {
+    margin-bottom: 100px;
+    h2 {
+      @include textBackground();
+      font-weight: bold;
+      font-size: 3rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 150px;
+    }
+  }
+
+  .wrapper {
+    position: relative;
+    &::before {
+      content: "\f501";
+      font-family: fontawesome;
+      display: inline-block;
+      color: $main-color;
+      border: 1px solid $main-color;
+      border-radius: 100%;
+      height: 70px;
+      width: 70px;
+      font-size: 2rem;
+      padding: 20px;
+      position: absolute;
+      left: 46.6%;
+      top: -70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .education-left {
+      text-align: end;
+      padding: 40px 0;
+
+      h2 {
+        @include textBackground();
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      p {
+        color: #fff;
+        letter-spacing: 1px;
+        margin-bottom: 100px;
+      }
+    }
+    .education-border {
+      border-right: 5px solid $main-color;
+      height: 85%;
+      position: relative;
+      right: 50%;
+
+      i {
+        color: $main-color;
+        display: block;
+        margin-bottom: 140px;
+        position: relative;
+        left: 92%;
+        top: 60px;
+        z-index: 2;
+        font-size: 2rem;
+      }
+    }
+    .education-right {
+      padding: 40px 0;
+      p {
+        color: #fff;
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+// EDUCATION ENDS
+
+// SKILLS SECTION STARTS
+#skills {
+  background-color: #22252c;
+  padding: 100px 0;
+
+  .section-title {
+    h1 {
+      @include textBackground();
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 100px;
+      text-transform: uppercase;
+    }
+  }
+  .wrapper {
+    background-color: $secondary-background-color;
+    padding: 50px 0;
+
+    .skills-item {
+      width: 80%;
+      margin-bottom: 30px;
+      h5 {
+        color: #fff;
+        padding: 5px 0;
+        border-bottom: 7px solid #000;
+      }
+
+      .count-bar {
+        border-top: 7px solid $main-color;
+        position: relative;
+        bottom: 15px;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          background-color: #07f7f7;
+          border-radius: 50%;
+          position: absolute;
+          right: -1%;
+          bottom: -4px;
+        }
+
+        &.bar1 {
+          width: 90%;
+
+          &::before {
+            @include barPercentage("90%");
+          }
+        }
+
+        &.bar2 {
+          width: 85%;
+
+          &::before {
+            @include barPercentage("85%");
+          }
+        }
+
+        &.bar3 {
+          width: 75%;
+
+          &::before {
+            @include barPercentage("75%");
+          }
+        }
+
+        &.bar4 {
+          width: 85%;
+
+          &::before {
+            @include barPercentage("85%");
+          }
+        }
+
+        &.bar5 {
+          width: 80%;
+
+          &::before {
+            @include barPercentage("80%");
+          }
+        }
+
+        &.bar6 {
+          width: 70%;
+
+          &::before {
+            @include barPercentage("70%");
+          }
+        }
+
+        &.bar7 {
+          width: 70%;
+
+          &::before {
+            @include barPercentage("70%");
+          }
+        }
+
+        &.bar8 {
+          width: 20%;
+
+          &::before {
+            content: "20%";
+            display: inline-block;
+            color: #fff;
+            position: absolute;
+            right: -20px;
+            top: 5px;
+          }
+        }
+
+        &.bar9 {
+          width: 40%;
+
+          &::before {
+            @include barPercentage("40%");
+          }
+        }
+      }
+    }
+  }
+}
+// SKILLS SECTION ENDS

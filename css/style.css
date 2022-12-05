@@ -7,6 +7,7 @@
 
 body {
   height: 5000px;
+  overflow-x: hidden;
 }
 
 html {
@@ -148,6 +149,67 @@ header .headerMenu ul li {
 header .headerMenu ul li a {
   color: #fff;
   font-size: 1.5rem;
+  transition: all 0.3s linear;
+}
+header .headerMenu ul li a:hover {
+  color: #07f7f7;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2%;
+  right: 4%;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: #07f7f7;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.scroll-to-top a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.scroll-to-top a i {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 50px;
+}
+.scroll-to-top .tooltiptext {
+  opacity: 0;
+  width: 83px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 60px;
+  left: 85%;
+  margin-left: -60px;
+  font-size: 0.8rem;
+  transition: all 0.3s linear;
+}
+.scroll-to-top .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.scroll-to-top.active {
+  opacity: 1;
+  bottom: 4%;
+}
+.scroll-to-top:hover .tooltiptext {
+  opacity: 1;
 }
 
 #about {
@@ -255,4 +317,225 @@ header .headerMenu ul li a {
   opacity: 0;
   transition: all 0.3s;
   font-size: 1.5rem;
+}
+
+#education {
+  background-color: #313741;
+  padding: 100px 0;
+}
+#education .section-title {
+  margin-bottom: 100px;
+}
+#education .section-title h2 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 150px;
+}
+#education .wrapper {
+  position: relative;
+}
+#education .wrapper::before {
+  content: "\f501";
+  font-family: fontawesome;
+  display: inline-block;
+  color: #07f7f7;
+  border: 1px solid #07f7f7;
+  border-radius: 100%;
+  height: 70px;
+  width: 70px;
+  font-size: 2rem;
+  padding: 20px;
+  position: absolute;
+  left: 46.6%;
+  top: -70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#education .wrapper .education-left {
+  text-align: end;
+  padding: 40px 0;
+}
+#education .wrapper .education-left h2 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+#education .wrapper .education-left p {
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 100px;
+}
+#education .wrapper .education-border {
+  border-right: 5px solid #07f7f7;
+  height: 85%;
+  position: relative;
+  right: 50%;
+}
+#education .wrapper .education-border i {
+  color: #07f7f7;
+  display: block;
+  margin-bottom: 140px;
+  position: relative;
+  left: 92%;
+  top: 60px;
+  z-index: 2;
+  font-size: 2rem;
+}
+#education .wrapper .education-right {
+  padding: 40px 0;
+}
+#education .wrapper .education-right p {
+  color: #fff;
+  margin-bottom: 100px;
+}
+
+#skills {
+  background-color: #22252c;
+  padding: 100px 0;
+}
+#skills .section-title h1 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 100px;
+  text-transform: uppercase;
+}
+#skills .wrapper {
+  background-color: #313741;
+  padding: 50px 0;
+}
+#skills .wrapper .skills-item {
+  width: 80%;
+  margin-bottom: 30px;
+}
+#skills .wrapper .skills-item h5 {
+  color: #fff;
+  padding: 5px 0;
+  border-bottom: 7px solid #000;
+}
+#skills .wrapper .skills-item .count-bar {
+  border-top: 7px solid #07f7f7;
+  position: relative;
+  bottom: 15px;
+}
+#skills .wrapper .skills-item .count-bar::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #07f7f7;
+  border-radius: 50%;
+  position: absolute;
+  right: -1%;
+  bottom: -4px;
+}
+#skills .wrapper .skills-item .count-bar.bar1 {
+  width: 90%;
+}
+#skills .wrapper .skills-item .count-bar.bar1::before {
+  content: "90%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+#skills .wrapper .skills-item .count-bar.bar2 {
+  width: 85%;
+}
+#skills .wrapper .skills-item .count-bar.bar2::before {
+  content: "85%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+#skills .wrapper .skills-item .count-bar.bar3 {
+  width: 75%;
+}
+#skills .wrapper .skills-item .count-bar.bar3::before {
+  content: "75%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+#skills .wrapper .skills-item .count-bar.bar4 {
+  width: 85%;
+}
+#skills .wrapper .skills-item .count-bar.bar4::before {
+  content: "85%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+#skills .wrapper .skills-item .count-bar.bar5 {
+  width: 80%;
+}
+#skills .wrapper .skills-item .count-bar.bar5::before {
+  content: "80%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+#skills .wrapper .skills-item .count-bar.bar6 {
+  width: 70%;
+}
+#skills .wrapper .skills-item .count-bar.bar6::before {
+  content: "70%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+#skills .wrapper .skills-item .count-bar.bar7 {
+  width: 70%;
+}
+#skills .wrapper .skills-item .count-bar.bar7::before {
+  content: "70%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+#skills .wrapper .skills-item .count-bar.bar8 {
+  width: 20%;
+}
+#skills .wrapper .skills-item .count-bar.bar8::before {
+  content: "20%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -20px;
+  top: 5px;
+}
+#skills .wrapper .skills-item .count-bar.bar9 {
+  width: 40%;
+}
+#skills .wrapper .skills-item .count-bar.bar9::before {
+  content: "40%";
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
 }/*# sourceMappingURL=style.css.map */
