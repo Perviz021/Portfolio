@@ -1,0 +1,25 @@
+$main-color: #07f7f7;
+$main-background-color: #22252c;
+$secondary-background-color: #313741;
+
+@mixin textBackground {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin barPercentage($percentage) {
+  content: $percentage;
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
