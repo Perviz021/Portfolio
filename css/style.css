@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -6,8 +8,7 @@
 }
 
 body {
-  height: 5000px;
-  overflow-x: hidden;
+  height: 7000px;
 }
 
 html {
@@ -70,10 +71,38 @@ header .headerContext nav .navWrapper .right {
 header .headerContext nav .navWrapper .left a {
   margin-right: 15px;
 }
-header .headerContext nav .navWrapper .left a i {
+header .headerContext nav .navWrapper .left a[href*=facebook]::after {
+  content: "\f39e";
+  font-family: fontawesome;
+  display: inline;
   font-size: 1.5rem;
+  color: #fff;
 }
-header .headerContext nav .navWrapper .right i {
+header .headerContext nav .navWrapper .left a[href*=twitter]::after {
+  content: "\f099";
+  font-family: fontawesome;
+  display: inline;
+  font-size: 1.5rem;
+  color: #fff;
+}
+header .headerContext nav .navWrapper .left a[href*=instagram]::after {
+  content: "\f16d";
+  font-family: fontawesome;
+  display: inline;
+  font-size: 1.5rem;
+  color: #fff;
+}
+header .headerContext nav .navWrapper .left a[href*=linkedin]::after {
+  content: "\f0e1";
+  font-family: fontawesome;
+  display: inline;
+  font-size: 1.5rem;
+  color: #fff;
+}
+header .headerContext nav .navWrapper .right span::after {
+  content: "\f0c9";
+  font-family: fontawesome;
+  display: inline;
   cursor: pointer;
   float: right;
   font-size: 2rem;
@@ -84,7 +113,6 @@ header .headerContext nav.sticky {
   left: 0;
   width: 100%;
   background-color: #17d396;
-  display: block;
   height: 60px;
   z-index: 5;
 }
@@ -129,7 +157,9 @@ header .headerMenu {
 header .headerMenu .exit {
   text-align: end;
 }
-header .headerMenu .exit i {
+header .headerMenu .exit span::after {
+  content: "\f00d";
+  font-family: fontawesome;
   color: #fff;
   cursor: pointer;
   font-size: 3rem;
@@ -173,7 +203,9 @@ header .headerMenu ul li a:hover {
   align-items: center;
   cursor: pointer;
 }
-.scroll-to-top a i {
+.scroll-to-top a::after {
+  content: "\f077";
+  font-family: fontawesome;
   color: #fff;
   font-size: 1.5rem;
   line-height: 50px;
@@ -250,9 +282,15 @@ header .headerMenu ul li a:hover {
   box-shadow: 0 0 20px rgba(22, 213, 156, 0.7);
   padding: 15px;
   margin: 20px 0 100px 0;
+  transition: all 0.3s linear;
 }
 #about .btnDownload i {
   margin-right: 5px;
+}
+#about .btnDownload:hover {
+  background: linear-gradient(to right, #06f6e6, #01f3aa);
+  box-shadow: 0 2px 20px rgba(22, 213, 144, 0.8);
+  color: #22252c;
 }
 #about .about-context h2 {
   background: -webkit-linear-gradient(left, #00f298, #07f7f7);
@@ -293,18 +331,20 @@ header .headerMenu ul li a:hover {
   text-align: center;
   overflow: hidden;
 }
-#about .interests .wrapper .interest-item i {
+#about .interests .wrapper .interest-item.football {
+  content: "\f1e3";
+  font-family: fontawesome;
   color: #07f7f7;
   font-size: 3rem;
   padding: 22px;
   border: 1px solid #07f7f7;
   border-radius: 100%;
 }
-#about .interests .wrapper .interest-item i:hover + p {
+#about .interests .wrapper .interest-item.football:hover + p {
   top: 0;
   opacity: 1;
 }
-#about .interests .wrapper .interest-item i:hover {
+#about .interests .wrapper .interest-item.football:hover {
   background-color: #07f7f7;
   color: #fff;
 }
@@ -401,6 +441,7 @@ header .headerMenu ul li a:hover {
 #skills {
   background-color: #22252c;
   padding: 100px 0;
+  overflow-x: hidden;
 }
 #skills .section-title h1 {
   background: -webkit-linear-gradient(left, #00f298, #07f7f7);
@@ -538,4 +579,125 @@ header .headerMenu ul li a:hover {
   position: absolute;
   right: -10px;
   bottom: 12px;
+}
+
+#projects {
+  background-color: #22252c;
+  padding: 100px 0;
+  overflow-x: hidden;
+}
+#projects .section-title h1 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 100px;
+}
+#projects .wrapper {
+  background-color: #313741;
+  padding: 100px 0;
+}
+#projects .wrapper .projects-item {
+  position: relative;
+  bottom: 0;
+  transition: all 0.3s linear;
+}
+#projects .wrapper .projects-item a {
+  display: inline-block;
+  height: 400px;
+}
+#projects .wrapper .projects-item a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s linear;
+}
+#projects .wrapper .projects-item h5 {
+  text-align: center;
+  color: #07f7f7;
+  margin-top: 30px;
+}
+#projects .wrapper .projects-item:hover {
+  bottom: 10px;
+}
+#projects .wrapper .projects-item:hover img {
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.5);
+}
+
+#contact {
+  background-color: #22252c;
+  padding: 100px 0;
+  overflow-x: hidden;
+}
+#contact .section-title h1 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+  letter-spacing: 1px;
+}
+
+#contact .form .div1,
+#contact .form .div2 {
+  width: 49%;
+  position: relative;
+  display: inline-block;
+}
+#contact .form .div1 input,
+#contact .form .div2 input {
+  width: 96%;
+  display: inline-block;
+  margin-right: 4%;
+  margin-bottom: 40px;
+}
+#contact .form .div3 {
+  width: 100%;
+  position: relative;
+}
+#contact .form .div3 textarea {
+  width: 100%;
+}
+#contact .form input,
+#contact .form textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #58616d;
+  color: #58616d;
+  outline: none;
+  padding: 5px;
+}
+#contact .form input + span,
+#contact .form textarea + span {
+  display: inline-block;
+  color: #58616d;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  transition: all 0.3s linear;
+}
+#contact .btnSend {
+  color: #07f7f7;
+  border: 1px solid #07f7f7;
+  padding: 20px 50px;
+  border-radius: 0;
+  font-size: 0.9rem;
+  margin: 50px auto;
+  width: 20%;
+  transition: all 0.3s linear;
+  text-align: center;
+  display: block;
+  box-shadow: 0 0 0px;
+  font-weight: bold;
+}
+#contact .btnSend:hover {
+  color: #000;
+  background-color: #07f7f7;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }/*# sourceMappingURL=style.css.map */

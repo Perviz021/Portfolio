@@ -15,11 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/style.css" />
     <script
       src="https://kit.fontawesome.com/5e6bd4f56d.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <!-- HEADER STARTS -->
@@ -30,7 +30,7 @@
         <row>
           <div class="col-12">
             <div class="exit">
-              <i class="fas fa-times"></i>
+              <span></span>
             </div>
           </div>
         </row>
@@ -68,22 +68,14 @@
           <div class="navWrapper">
             <div class="left">
               <a href="https://www.facebook.com" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+                <!-- <i class="fab fa-facebook"></i> -->
               </a>
-              <a href="https://twitter.com/" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/" target="_blank">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com/" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+              <a href="https://twitter.com/" target="_blank"> </a>
+              <a href="https://www.instagram.com/" target="_blank"> </a>
+              <a href="https://www.linkedin.com/" target="_blank"> </a>
             </div>
             <div class="right">
-              <span>
-                <i class="fas fa-bars"></i>
-              </span>
+              <span> </span>
             </div>
           </div>
         </nav>
@@ -99,9 +91,7 @@
 
     <!-- SCROLL-To-TOP STARTS-->
     <div class="scroll-to-top">
-      <a href="#top">
-        <i class="fas fa-chevron-up"></i>
-      </a>
+      <a href="#top"> </a>
       <span class="tooltiptext">Go To Top</span>
     </div>
     <!-- SCROLL TO TOP ENDS -->
@@ -141,20 +131,16 @@
             <div class="interests">
               <h2>MY INTERESTS</h2>
               <div class="wrapper">
-                <div class="interest-item">
-                  <i class="fas fa-futbol"></i>
+                <div class="interest-item football">
                   <p>Football</p>
                 </div>
-                <div class="interest-item">
-                  <i class="fas fa-biking"></i>
+                <div class="interest-item biking">
                   <p>Biking</p>
                 </div>
-                <div class="interest-item">
-                  <i class="fas fa-gamepad"></i>
+                <div class="interest-item game">
                   <p>Games</p>
                 </div>
-                <div class="interest-item">
-                  <i class="fas fa-music"></i>
+                <div class="interest-item music">
                   <p>Music</p>
                 </div>
               </div>
@@ -303,6 +289,82 @@
     </section>
     <!-- SKILLS SECTION ENDS -->
 
+    <!-- PROJECTS SECTION STARTS -->
+    <section id="projects">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h1>My Projects</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="projects-item">
+                    <a
+                      href="https://stellular-cobbler-b04720.netlify.app/"
+                      target="_blank"
+                    >
+                      <img src="./images/projects-section.png" alt="" />
+                    </a>
+                    <h5>Front End Project</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PROJECTS SECTION ENDS -->
+
+    <!-- CONTACT SECTION STARTS -->
+    <section id="contact">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h1>CONTACT ME</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="container">
+            <div class="form">
+              <div class="div1">
+                <input type="text" required />
+                <span>NAME *</span>
+              </div>
+              <div class="div2">
+                <input type="email" required />
+                <span>EMAIL *</span>
+              </div>
+              <div class="div3">
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="20"
+                  rows="10"
+                ></textarea>
+                <span>MESSAGE *</span>
+              </div>
+
+              <button class="btn btn-lg btnSend">SEND MESSAGE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT SECTION ENDS -->
+
     <script src="./js/index.js"></script>
+
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>

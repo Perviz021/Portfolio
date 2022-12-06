@@ -2,8 +2,8 @@
 
 body {
   //   min-height: 100vh;
-  height: 5000px;
-  overflow-x: hidden;
+  height: 7000px;
+  // overflow-x: hidden;
 }
 
 html {
@@ -70,14 +70,46 @@ header {
           a {
             margin-right: 15px;
 
-            i {
+            &[href*="facebook"]::after {
+              content: "\f39e";
+              font-family: fontawesome;
+              display: inline;
               font-size: 1.5rem;
+              color: #fff;
             }
+            &[href*="twitter"]::after {
+              content: "\f099";
+              font-family: fontawesome;
+              display: inline;
+              font-size: 1.5rem;
+              color: #fff;
+            }
+            &[href*="instagram"]::after {
+              content: "\f16d";
+              font-family: fontawesome;
+              display: inline;
+              font-size: 1.5rem;
+              color: #fff;
+            }
+            &[href*="linkedin"]::after {
+              content: "\f0e1";
+              font-family: fontawesome;
+              display: inline;
+              font-size: 1.5rem;
+              color: #fff;
+            }
+
+            // i {
+            //   font-size: 1.5rem;
+            // }
           }
         }
 
         .right {
-          i {
+          span::after {
+            content: "\f0c9";
+            font-family: fontawesome;
+            display: inline;
             cursor: pointer;
             float: right;
             font-size: 2rem;
@@ -91,7 +123,7 @@ header {
         left: 0;
         width: 100%;
         background-color: #17d396;
-        display: block;
+        // display: block;
         height: 60px;
         z-index: 5;
 
@@ -142,7 +174,10 @@ header {
 
     .exit {
       text-align: end;
-      i {
+
+      span::after {
+        content: "\f00d";
+        font-family: fontawesome;
         color: #fff;
         cursor: pointer;
         font-size: 3rem;
@@ -191,7 +226,10 @@ header {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    i {
+
+    &::after {
+      content: "\f077";
+      font-family: fontawesome;
       color: #fff;
       font-size: 1.5rem;
       line-height: 50px;
@@ -276,9 +314,16 @@ header {
     box-shadow: 0 0 20px rgb(22 213 156 / 70%);
     padding: 15px;
     margin: 20px 0 100px 0;
+    transition: all 0.3s linear;
 
     i {
       margin-right: 5px;
+    }
+
+    &:hover {
+      background: linear-gradient(to right, #06f6e6, #01f3aa);
+      box-shadow: 0 2px 20px rgb(22 213 144 / 80%);
+      color: #22252c;
     }
   }
 
@@ -322,7 +367,10 @@ header {
       .interest-item {
         text-align: center;
         overflow: hidden;
-        i {
+
+        &.football {
+          content: "\f1e3";
+          font-family: fontawesome;
           color: $main-color;
           font-size: 3rem;
           padding: 22px;
@@ -339,6 +387,7 @@ header {
             color: #fff;
           }
         }
+
         p {
           color: #fff;
           margin-top: 10px;
@@ -441,6 +490,7 @@ header {
 #skills {
   background-color: #22252c;
   padding: 100px 0;
+  overflow-x: hidden;
 
   .section-title {
     h1 {
@@ -562,3 +612,141 @@ header {
   }
 }
 // SKILLS SECTION ENDS
+
+// PROJECTS SECTION STARTS
+#projects {
+  background-color: $main-background-color;
+  padding: 100px 0;
+  overflow-x: hidden;
+
+  .section-title {
+    h1 {
+      @include textBackground();
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 100px;
+    }
+  }
+
+  .wrapper {
+    background-color: $secondary-background-color;
+    padding: 100px 0;
+
+    .projects-item {
+      position: relative;
+      bottom: 0;
+      transition: all 0.3s linear;
+
+      a {
+        display: inline-block;
+        height: 400px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+          box-shadow: 0 0 20px rgba($color: #fff, $alpha: 0.5);
+          transition: all 0.3s linear;
+        }
+      }
+      h5 {
+        text-align: center;
+        color: $main-color;
+        margin-top: 30px;
+      }
+
+      &:hover {
+        bottom: 10px;
+      }
+      &:hover img {
+        box-shadow: 0 5px 20px rgba($color: #fff, $alpha: 0.5);
+      }
+    }
+  }
+}
+// PROJECTS SECTION ENDS
+
+// CONTACT SECTION STARTS
+#contact {
+  background-color: $main-background-color;
+  padding: 100px 0;
+  overflow-x: hidden;
+
+  .section-title {
+    h1 {
+      @include textBackground();
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 100px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+#contact {
+  .form {
+    .div1,
+    .div2 {
+      width: 49%;
+      position: relative;
+      display: inline-block;
+
+      input {
+        width: 96%;
+        display: inline-block;
+        margin-right: 4%;
+        margin-bottom: 40px;
+      }
+    }
+    .div3 {
+      width: 100%;
+      position: relative;
+
+      textarea {
+        width: 100%;
+      }
+    }
+    input,
+    textarea {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #58616d;
+      color: #58616d;
+      outline: none;
+      padding: 5px;
+
+      + span {
+        display: inline-block;
+        color: #58616d;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+
+  .btnSend {
+    color: $main-color;
+    border: 1px solid $main-color;
+    padding: 20px 50px;
+    border-radius: 0;
+    font-size: 0.9rem;
+    margin: 50px auto;
+    width: 20%;
+    transition: all 0.3s linear;
+    text-align: center;
+    display: block;
+    box-shadow: 0 0 0px;
+    font-weight: bold;
+
+    &:hover {
+      color: #000;
+      background-color: $main-color;
+      box-shadow: 0 0 20px rgba($color: #fff, $alpha: 0.3);
+    }
+  }
+}
+// CONTACT SECTION ENDS
