@@ -27,8 +27,10 @@ window.addEventListener("scroll", () => {
   }
 });
 
-let menuBtn = document.querySelector("header nav .right i");
-let exitBtn = document.querySelector("header .headerMenu .exit i");
+// NAV OPENING AND CLOSING
+let menuBtn = document.querySelector("header nav .right span");
+
+let exitBtn = document.querySelector("header .headerMenu .exit span");
 let menu = document.querySelector("header .headerMenu");
 
 menuBtn.addEventListener("click", () => {
@@ -41,4 +43,36 @@ exitBtn.addEventListener("click", () => {
   menu.style.opactiy = 0;
   menu.style.visibility = "hidden";
   menu.style.transform = "scale(0)";
+});
+
+// INPUT AND TEXTAREA
+let inputs = document.querySelectorAll("#contact .form input");
+let textArea = document.querySelector("#contact .form textarea");
+
+for (let i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("focus", () => {
+    inputs[i].style.borderColor = "#07f7f7";
+    // inputs[i].nextElementSibling.style.fontSize = "0.8rem";
+    inputs[i].nextElementSibling.style.cssText =
+      "font-size: 0.7rem; top: -10px; color: #07f7f7";
+  });
+
+  inputs[i].addEventListener("blur", () => {
+    inputs[i].style.borderColor = "#58616d";
+    inputs[i].nextElementSibling.style.cssText =
+      "font-size: 1rem; top: 5px; color: #58616d";
+  });
+}
+
+textArea.addEventListener("focus", () => {
+  textArea.style.borderColor = "#07f7f7";
+  // inputs[i].nextElementSibling.style.fontSize = "0.8rem";
+  textArea.nextElementSibling.style.cssText =
+    "font-size: 0.7rem; top: -10px; color: #07f7f7";
+});
+
+textArea.addEventListener("blur", () => {
+  textArea.style.borderColor = "#58616d";
+  textArea.nextElementSibling.style.cssText =
+    "font-size: 1rem; top: 5px; color: #58616d";
 });
