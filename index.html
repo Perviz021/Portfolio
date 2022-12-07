@@ -38,25 +38,22 @@
           <div class="col-12">
             <ul>
               <li>
-                <a href="#">Menu</a>
+                <a href="#top">Menu</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="#about">About</a>
               </li>
               <li>
-                <a href="#">Education</a>
+                <a href="#education">Education</a>
               </li>
               <li>
-                <a href="#">Skills</a>
+                <a href="#skills">Skills</a>
               </li>
               <li>
-                <a href="#">Projects</a>
+                <a href="#projects">Projects</a>
               </li>
               <li>
-                <a href="#">Certificates</a>
-              </li>
-              <li>
-                <a href="#">Contact Me</a>
+                <a href="#contact">Contact Me</a>
               </li>
             </ul>
           </div>
@@ -67,9 +64,7 @@
         <nav>
           <div class="navWrapper">
             <div class="left">
-              <a href="https://www.facebook.com" target="_blank">
-                <!-- <i class="fab fa-facebook"></i> -->
-              </a>
+              <a href="https://www.facebook.com" target="_blank"> </a>
               <a href="https://twitter.com/" target="_blank"> </a>
               <a href="https://www.instagram.com/" target="_blank"> </a>
               <a href="https://www.linkedin.com/" target="_blank"> </a>
@@ -104,20 +99,31 @@
             <div class="imgHolder">
               <img src="./images/header back.jpg" alt="" />
             </div>
-            <button class="btn btn-lg btnDownload">
-              <i class="fas fa-cloud-download-alt"></i>
+            <!-- <button class="btn btn-lg btnDownload">
+              <span></span>
               Download Resume
-            </button>
+            </button> -->
+            <a
+              class="btnDownload"
+              href="./Parviz Namazli Resume.pdf"
+              download=""
+            >
+              <span></span>
+              Download Resume
+            </a>
           </div>
           <div class="col-lg-6 col-md-12">
             <div class="about-context">
               <h2>About Me</h2>
               <p>
-                Hello! I'm Oliver Queen. Web Developer with over 8 years of
-                experience. Experienced with all stages of the development cycle
-                for dynamic web projects. Having an in-depth knowledge including
-                advanced HTML5, CSS3, JavaScript, jQuery, Angular JS. Strong
-                background in management and leadership.
+                Hello, my name is Parviz Namazli. I'm a software developer with
+                a lot of passion. I completed my bachelor degree in the field of
+                IT, and currently studying on master. I wish to maintain a
+                career in web development because I absolutely enjoy creating
+                beautiful websites. I have HTML, CSS, and JavaScript skills and
+                I'm currently studying React. I'm now seeking for a junior
+                development position so that I may start my career and gain
+                experience from experts.
               </p>
               <li><span>NAME: </span>Parviz Namazli</li>
               <li><span>DATE OF BIRTH:</span>25 March 2000</li>
@@ -131,16 +137,20 @@
             <div class="interests">
               <h2>MY INTERESTS</h2>
               <div class="wrapper">
-                <div class="interest-item football">
+                <div class="interest-item">
+                  <span class="football"></span>
                   <p>Football</p>
                 </div>
-                <div class="interest-item biking">
+                <div class="interest-item">
+                  <span class="biking"></span>
                   <p>Biking</p>
                 </div>
-                <div class="interest-item game">
+                <div class="interest-item">
+                  <span class="game"></span>
                   <p>Games</p>
                 </div>
-                <div class="interest-item music">
+                <div class="interest-item">
+                  <span class="music"></span>
                   <p>Music</p>
                 </div>
               </div>
@@ -180,28 +190,23 @@
                 </div>
                 <div class="col-lg-2">
                   <div class="education-border">
-                    <i class="far fa-dot-circle"></i>
-                    <i class="far fa-dot-circle"></i>
-                    <i class="far fa-dot-circle"></i>
-                    <i class="fas fa-circle"></i>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
                 </div>
                 <div class="col-lg-5">
                   <div class="education-right">
                     <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Et sed, quisquam accusamus deserunt doloremque nihil
-                      reiciendis adipisci quas nostrum quis?
+                      Courses: Neural Networks, Statistics, OOP, C++, Python,
+                      Project Management and etc.
                     </p>
+                    <p>C# Fundamentals</p>
                     <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Et sed, quisquam accusamus deserunt doloremque nihil
-                      reiciendis adipisci quas nostrum quis?
-                    </p>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Et sed, quisquam accusamus deserunt doloremque nihil
-                      reiciendis adipisci quas nostrum quis?
+                      Courses: Advanced Data Structures, Advanced OOP, Software
+                      Engineering, Machine Learning, Parallel Programming,
+                      Software Engineering and etc.
                     </p>
                   </div>
                 </div>
@@ -334,13 +339,13 @@
       <div class="row">
         <div class="col-12">
           <div class="container">
-            <div class="form">
+            <form id="contact-form">
               <div class="div1">
-                <input type="text" required />
+                <input name="fullname" type="text" id="name" required />
                 <span>NAME *</span>
               </div>
               <div class="div2">
-                <input type="email" required />
+                <input name="email" type="email" id="email" required />
                 <span>EMAIL *</span>
               </div>
               <div class="div3">
@@ -353,18 +358,72 @@
                 <span>MESSAGE *</span>
               </div>
 
-              <button class="btn btn-lg btnSend">SEND MESSAGE</button>
-            </div>
+              <button type="submit" class="btn btn-lg btnSend">
+                SEND MESSAGE
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </section>
     <!-- CONTACT SECTION ENDS -->
 
+    <!-- FOOTER STARTS -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-social-links">
+              <a href="https://www.facebook.com">
+                <span class="facebook"></span>
+              </a>
+              <a href="https://twitter.com/">
+                <span class="twitter"></span>
+              </a>
+              <a href="https://www.instagram.com">
+                <span class="instagram"></span>
+              </a>
+              <a href="https://www.linkedin.com/">
+                <span class="linkedin"></span>
+              </a>
+            </div>
+            <hr />
+            <div class="copyright-area">
+              <p>PARVIZNAMAZLI © 2022. ALL RIGHTS RESERVED.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER ENDS -->
+
     <script src="./js/index.js"></script>
 
-    <script>
-      feather.replace();
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init("A4b962zN2mISU-AKz");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // these IDs from the previous steps
+            emailjs.sendForm("service_z8ng84w", "template_5crs0li", this).then(
+              function () {
+                alert("Message has been sent successfully!");
+              },
+              function () {
+                alert("Message couldn't be sent. There was an error!");
+                console.log(error);
+              }
+            );
+          });
+      };
     </script>
   </body>
 </html>
