@@ -1,23 +1,5 @@
 @import "./resets";
 
-body {
-  //   min-height: 100vh;
-  height: 7000px;
-  // overflow-x: hidden;
-}
-
-html {
-  scroll-behavior: smooth;
-  height: 100%;
-}
-
-a {
-  text-decoration: none;
-}
-li {
-  list-style-type: none;
-}
-
 // HEADER STARTS
 header {
   height: 625px;
@@ -131,7 +113,7 @@ header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 15px 10%;
+          padding: 5px 10%;
         }
       }
     }
@@ -307,6 +289,7 @@ header {
 
   .btnDownload {
     color: #fff;
+    display: inline-block;
     position: relative;
     left: 90px;
     font-size: 1rem;
@@ -316,7 +299,9 @@ header {
     margin: 20px 0 100px 0;
     transition: all 0.3s linear;
 
-    i {
+    span::after {
+      content: "\f381";
+      font-family: fontawesome;
       margin-right: 5px;
     }
 
@@ -368,21 +353,33 @@ header {
         text-align: center;
         overflow: hidden;
 
-        &.football {
-          content: "\f1e3";
-          font-family: fontawesome;
-          color: $main-color;
-          font-size: 3rem;
-          padding: 22px;
-          border: 1px solid $main-color;
-          border-radius: 100%;
-
-          &:hover + p {
-            top: 0;
-            opacity: 1;
+        span {
+          &::after {
+            content: "\f1e3";
+            font-family: fontawesome;
+            color: $main-color;
+            font-size: 3rem;
+            padding: 22px;
+            border: 1px solid $main-color;
+            border-radius: 100%;
+            position: relative;
+            top: 11px;
+          }
+          &.biking::after {
+            content: "\f84a";
+          }
+          &.game::after {
+            content: "\f11b";
+          }
+          &.music::after {
+            content: "\f001";
           }
 
-          &:hover {
+          &:hover + p {
+            top: 5px;
+            opacity: 1;
+          }
+          &:hover::after {
             background-color: $main-color;
             color: #fff;
           }
@@ -393,7 +390,7 @@ header {
           margin-top: 10px;
           margin-bottom: 0;
           position: relative;
-          top: 5px;
+          top: 10px;
           opacity: 0;
           transition: all 0.3s;
           font-size: 1.5rem;
@@ -454,32 +451,39 @@ header {
       }
       p {
         color: #fff;
-        letter-spacing: 1px;
-        margin-bottom: 100px;
+        margin-bottom: 120px;
       }
     }
     .education-border {
       border-right: 5px solid $main-color;
-      height: 85%;
+      height: 84%;
       position: relative;
       right: 50%;
 
-      i {
-        color: $main-color;
-        display: block;
-        margin-bottom: 140px;
-        position: relative;
-        left: 92%;
-        top: 60px;
-        z-index: 2;
-        font-size: 2rem;
+      span {
+        &::after {
+          content: "\f192";
+          font-family: fontawesome;
+          color: $main-color;
+          display: block;
+          margin-bottom: 140px;
+          position: relative;
+          left: 92%;
+          top: 60px;
+          z-index: 2;
+          font-size: 2rem;
+        }
+
+        &:nth-child(4)::after {
+          content: "\f192";
+        }
       }
     }
     .education-right {
       padding: 40px 0;
       p {
         color: #fff;
-        margin-bottom: 100px;
+        margin-bottom: 160px;
       }
     }
   }
@@ -686,7 +690,7 @@ header {
 }
 
 #contact {
-  .form {
+  form {
     .div1,
     .div2 {
       width: 49%;
@@ -698,6 +702,16 @@ header {
         display: inline-block;
         margin-right: 4%;
         margin-bottom: 40px;
+
+        & ~ span {
+          display: inline-block;
+          color: #58616d;
+          position: absolute;
+          left: 0;
+          top: 5px;
+          transition: all 0.3s linear;
+          z-index: 1;
+        }
       }
     }
     .div3 {
@@ -706,6 +720,16 @@ header {
 
       textarea {
         width: 100%;
+
+        & ~ span {
+          display: inline-block;
+          color: #58616d;
+          position: absolute;
+          left: 0;
+          top: 5px;
+          transition: all 0.3s linear;
+          z-index: 1;
+        }
       }
     }
     input,
@@ -716,15 +740,8 @@ header {
       color: #58616d;
       outline: none;
       padding: 5px;
-
-      + span {
-        display: inline-block;
-        color: #58616d;
-        position: absolute;
-        left: 0;
-        top: 5px;
-        transition: all 0.3s linear;
-      }
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -750,3 +767,59 @@ header {
   }
 }
 // CONTACT SECTION ENDS
+
+// FOOTER STARTS
+footer {
+  background-color: $main-background-color;
+  padding: 80px 0 50px 0;
+  .footer-social-links {
+    display: flex;
+    justify-content: center;
+    a {
+      color: $main-color;
+      margin-right: 20px;
+      span {
+        &::after {
+          content: "";
+          font-family: fontawesome;
+          font-size: 1.5rem;
+          border-radius: 50%;
+          background-color: $secondary-background-color;
+          padding: 15px;
+          transition: all 0.3s linear;
+        }
+        &.facebook::after {
+          content: "\f39e";
+          padding: 15px 19px;
+        }
+        &.twitter::after {
+          content: "\f099";
+        }
+        &.instagram::after {
+          content: "\f16d";
+        }
+        &.linkedin::after {
+          content: "\f0e1";
+        }
+
+        &:hover::after {
+          background-color: $main-color;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  hr {
+    border-color: #58616d;
+    margin: 80px 0 50px 0;
+  }
+
+  .copyright-area {
+    p {
+      color: $main-color;
+      text-align: center;
+    }
+  }
+}
+// FOOTER ENDS
