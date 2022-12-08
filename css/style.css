@@ -201,6 +201,33 @@ header .headerMenu ul li a:hover {
   color: #07f7f7;
 }
 
+@media screen and (max-width: 992px) {
+  header .headerContext .bottomText h1 {
+    font-size: 5rem;
+  }
+  header .headerContext .bottomText h3 {
+    font-size: 4rem;
+  }
+  header .headerContext .bottomText p {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .headerContext .bottomText h1 {
+    font-size: 4rem;
+  }
+  header .headerContext .bottomText h3 {
+    font-size: 3rem;
+  }
+  header .headerContext .bottomText p {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 637px) {
+  header .headerContext .navWrapper .left {
+    width: 40% !important;
+  }
+}
 .scroll-to-top {
   position: fixed;
   bottom: 2%;
@@ -363,12 +390,15 @@ header .headerMenu ul li a:hover {
 }
 #about .interests .wrapper .interest-item span.biking::after {
   content: "\f84a";
+  padding: 20px 17px;
 }
 #about .interests .wrapper .interest-item span.game::after {
   content: "\f11b";
+  padding: 20px 17px;
 }
 #about .interests .wrapper .interest-item span.music::after {
   content: "\f001";
+  padding: 20px 21px;
 }
 #about .interests .wrapper .interest-item span:hover + p {
   top: 5px;
@@ -389,6 +419,19 @@ header .headerMenu ul li a:hover {
   font-size: 1.5rem;
 }
 
+@media screen and (max-width: 992px) {
+  #about .about-context {
+    margin-bottom: 100px;
+  }
+  #about .interests .wrapper {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #about .interests .wrapper {
+    width: 90%;
+  }
+}
 #education {
   background-color: #313741;
   padding: 100px 0;
@@ -429,49 +472,116 @@ header .headerMenu ul li a:hover {
   align-items: center;
 }
 #education .wrapper .education-left {
-  text-align: end;
-  padding: 40px 0;
+  padding: 100px 0 50px 0;
+  display: flex;
+  margin-right: 93px;
 }
-#education .wrapper .education-left h2 {
+#education .wrapper .education-left .text {
+  margin-right: 50px;
+  text-align: end;
+}
+#education .wrapper .education-left .text h2 {
   background: -webkit-linear-gradient(left, #00f298, #07f7f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-size: 1.5rem;
 }
-#education .wrapper .education-left p {
+#education .wrapper .education-left .text p {
   color: #fff;
   margin-bottom: 120px;
 }
-#education .wrapper .education-border {
-  border-right: 5px solid #07f7f7;
-  height: 84%;
+#education .wrapper .education-left .education-border {
   position: relative;
-  right: 50%;
 }
-#education .wrapper .education-border span::after {
+#education .wrapper .education-left .education-border::before {
+  content: "";
+  display: inline-block;
+  border-right: 5px solid #07f7f7;
+  height: 90%;
+  position: absolute;
+  right: -9px;
+  bottom: 180px;
+}
+#education .wrapper .education-left .education-border span::after {
   content: "\f192";
   font-family: fontawesome;
   color: #07f7f7;
   display: block;
-  margin-bottom: 140px;
+  margin-bottom: 145px;
   position: relative;
-  left: 92%;
-  top: 60px;
+  left: 67%;
+  top: -5px;
   z-index: 2;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
-#education .wrapper .education-border span:nth-child(4)::after {
-  content: "\f192";
+#education .wrapper .education-left .education-border span:nth-child(4)::after {
+  content: "\f057";
+  top: 11px;
 }
 #education .wrapper .education-right {
-  padding: 40px 0;
+  padding: 100px 0 50px 0;
+  position: relative;
+  right: 15px;
 }
 #education .wrapper .education-right p {
   color: #fff;
   margin-bottom: 160px;
 }
 
+@media screen and (max-width: 1200px) {
+  #education .wrapper .education-border::before {
+    right: -30px !important;
+  }
+  #education .wrapper .education-border span::after {
+    left: 124% !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  #education {
+    overflow-x: hidden;
+  }
+  #education .section-title h2 {
+    font-size: 2.5rem;
+  }
+  #education .wrapper::before {
+    left: 0;
+  }
+  #education .wrapper .education-left {
+    flex-direction: row-reverse;
+  }
+  #education .wrapper .education-left .education-border::before {
+    right: 3% !important;
+  }
+  #education .wrapper .education-left .education-border span::after {
+    left: 40% !important;
+  }
+  #education .wrapper .education-left .text {
+    text-align: start;
+    margin-left: 50px;
+  }
+  #education .wrapper .education-right {
+    position: absolute;
+    top: 5.3rem;
+    left: 87px;
+    right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  #education .wrapper .education-left .education-border::before {
+    bottom: 197px !important;
+    height: 89% !important;
+  }
+  #education .wrapper .education-left .education-border span::after {
+    margin-bottom: 165px !important;
+  }
+  #education .wrapper .education-right {
+    top: 7rem;
+  }
+  #education .wrapper .education-right p:nth-child(2) {
+    margin-bottom: 175px !important;
+  }
+}
 #skills {
   background-color: #22252c;
   padding: 100px 0;
@@ -560,10 +670,10 @@ header .headerMenu ul li a:hover {
   bottom: 12px;
 }
 #skills .wrapper .skills-item .count-bar.bar5 {
-  width: 80%;
+  width: 75%;
 }
 #skills .wrapper .skills-item .count-bar.bar5::before {
-  content: "80%";
+  content: "75%";
   display: inline-block;
   color: #fff;
   position: absolute;
@@ -582,10 +692,10 @@ header .headerMenu ul li a:hover {
   bottom: 12px;
 }
 #skills .wrapper .skills-item .count-bar.bar7 {
-  width: 70%;
+  width: 60%;
 }
 #skills .wrapper .skills-item .count-bar.bar7::before {
-  content: "70%";
+  content: "60%";
   display: inline-block;
   color: #fff;
   position: absolute;
@@ -593,10 +703,10 @@ header .headerMenu ul li a:hover {
   bottom: 12px;
 }
 #skills .wrapper .skills-item .count-bar.bar8 {
-  width: 20%;
+  width: 15%;
 }
 #skills .wrapper .skills-item .count-bar.bar8::before {
-  content: "20%";
+  content: "15%";
   display: inline-block;
   color: #fff;
   position: absolute;
@@ -627,7 +737,7 @@ header .headerMenu ul li a:hover {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 #projects .wrapper {
   background-color: #313741;
@@ -663,6 +773,11 @@ header .headerMenu ul li a:hover {
   box-shadow: 0 5px 20px rgba(255, 255, 255, 0.5);
 }
 
+@media screen and (max-width: 992px) {
+  #projects .section-title h1 {
+    margin-bottom: 50px;
+  }
+}
 #contact {
   background-color: #22252c;
   padding: 100px 0;
@@ -748,6 +863,23 @@ header .headerMenu ul li a:hover {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
+@media screen and (max-width: 992px) {
+  #contact #contact-form .btnSend {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #contact .section-title h1 {
+    font-size: 2rem;
+  }
+  #contact #contact-form .div1,
+#contact #contact-form .div2 {
+    width: 100%;
+  }
+  #contact #contact-form .btnSend {
+    width: 45%;
+  }
+}
 footer {
   background-color: #22252c;
   padding: 80px 0 50px 0;
@@ -793,4 +925,10 @@ footer hr {
 footer .copyright-area p {
   color: #07f7f7;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  footer .copyright-area p {
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=style.css.map */
