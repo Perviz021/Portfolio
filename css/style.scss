@@ -1059,7 +1059,7 @@ footer {
 }
 // FOOTER ENDS
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 420px) {
   body {
     overflow-x: hidden;
   }
@@ -1070,7 +1070,7 @@ footer {
       nav {
         .navWrapper {
           .left {
-            width: 50% !important;
+            width: 55% !important;
           }
         }
       }
@@ -1086,6 +1086,7 @@ footer {
       &::after {
         width: 300px;
         height: 300px;
+        left: 40px;
       }
     }
     .interests {
