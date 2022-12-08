@@ -45,6 +45,17 @@ for (let i = 0; i < options.length; i++) {
   });
 }
 
+// PRELOADER
+let loader = document.querySelector("#loader");
+
+setTimeout(() => {
+  loader.style.display = "none";
+}, 1000);
+
+// window.addEventListener("load", function () {
+//   loader.style.display = "none";
+// });
+
 // INPUT AND TEXTAREA
 let inputs = document.querySelectorAll("#contact form input");
 let textArea = document.querySelector("#contact form textarea");
