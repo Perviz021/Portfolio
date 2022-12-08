@@ -1,5 +1,26 @@
 @import "./resets";
 
+// PRELOADER STARTS
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2a2a2a;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+// PRELOADER ENDS
+
 // HEADER STARTS
 header {
   height: 625px;
@@ -246,6 +267,7 @@ header {
   border-radius: 50%;
   opacity: 0;
   transition: all 0.3s linear;
+  z-index: 9999;
   a {
     display: flex;
     justify-content: center;
@@ -1036,3 +1058,97 @@ footer {
   }
 }
 // FOOTER ENDS
+
+@media screen and (min-width: 320px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  // HEADER
+  header {
+    .headerContext {
+      nav {
+        .navWrapper {
+          .left {
+            width: 50% !important;
+          }
+        }
+      }
+    }
+  }
+
+  // ABOUT
+  #about {
+    .imgHolder {
+      width: 300px;
+      height: 300px;
+
+      &::after {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    .interests {
+      .wrapper {
+        width: 100%;
+
+        .interest-item {
+          span {
+            &::after {
+              font-size: 2.5rem;
+            }
+            &.football::after {
+              padding: 20px;
+            }
+          }
+          p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // EDUCATION
+  #education {
+    .section-title {
+      h2 {
+        font-size: 2rem;
+        text-align: start;
+      }
+    }
+    .wrapper {
+      &::before {
+        height: 60px;
+        width: 60px;
+        padding: 0;
+        font-size: 1.5rem;
+        left: 3px;
+      }
+
+      .education-left {
+        margin-right: 5px;
+
+        .education-border {
+          &::before {
+            bottom: 198px !important;
+            height: 90% !important;
+          }
+        }
+      }
+      .education-right {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  // CONTACT
+  #contact {
+    #contact-form {
+      .btnSend {
+        width: 57% !important;
+      }
+    }
+  }
+}
